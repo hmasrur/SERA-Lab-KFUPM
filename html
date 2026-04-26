@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SERA Lab | KFUPM</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        zinc: {
+                            900: '#18181b',
+                            950: '#09090b',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Iconify -->
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+
+    <!-- GSAP & ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body class="bg-zinc-950 text-zinc-300 font-sans antialiased selection:bg-zinc-800 selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 inset-x-0 z-50 border-b border-white/5 bg-zinc-950/70 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-2 text-zinc-100">
+                <iconify-icon icon="solar:cpu-bolt-linear" style="font-size: 1.5rem; stroke-width: 1.5;"></iconify-icon>
+                <span class="text-sm font-medium tracking-tight">SERA Lab</span>
+                <span class="text-xs text-zinc-500 ml-2 hidden sm:inline-block">KFUPM</span>
+            </div>
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-400">
+                <a href="#research" class="hover:text-zinc-100 transition-colors">Research</a>
+                <a href="#publications" class="hover:text-zinc-100 transition-colors">Publications</a>
+                <a href="#team" class="hover:text-zinc-100 transition-colors">Team</a>
+            </div>
+            <button class="md:hidden text-zinc-400 hover:text-zinc-100">
+                <iconify-icon icon="solar:hamburger-menu-linear" style="font-size: 1.5rem; stroke-width: 1.5;"></iconify-icon>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-24 md:pt-48 md:pb-32 overflow-hidden flex flex-col items-center justify-center min-h-[90vh]">
+        <!-- Background Asset with Overlay -->
+        <div class="absolute inset-0 z-0 opacity-30" style="background-image: url('https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/fa51902b-c2a4-4c33-a96e-a8f1ef67edc6_1600w.jpg'); background-size: cover; background-position: center; filter: blur(40px);"></div>
+        
+        <div class="absolute inset-0 z-0 bg-gradient-to-b from-zinc-950/10 via-zinc-950/80 to-zinc-950"></div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm mb-8 text-xs font-medium text-zinc-300">
+                <span class="w-2 h-2 rounded-full bg-emerald-500" style="box-shadow: 0 0 10px rgba(16,185,129,0.5);"></span>
+                Accepting new PhD candidates for Fall
+            </div>
+            
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-zinc-100 mb-8 leading-[1.1] mask-reveal">
+                Engineering intelligence for sustainable systems.
+            </h1>
+            
+            <p class="max-w-2xl mx-auto text-base md:text-lg text-zinc-400 mb-10 leading-relaxed mask-reveal">
+                The Systems Engineering & Robotics Applications (SERA) Lab at KFUPM focuses on the intersection of artificial intelligence, autonomous control, and renewable energy grids to solve complex infrastructural challenges.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <!-- Premium Border Gradient Button -->
+                <div class="relative p-[1px] rounded-lg bg-gradient-to-b from-zinc-600 to-zinc-900 group cursor-pointer w-full sm:w-auto">
+                    <a href="#research" class="relative flex items-center justify-center gap-2 px-6 py-2.5 bg-zinc-900 text-zinc-100 text-sm font-medium rounded-[7px] hover:bg-zinc-800 transition-colors w-full h-full">
+                        Explore Research
+                        <iconify-icon icon="solar:arrow-right-linear" style="font-size: 1.25rem; stroke-width: 1.5;"></iconify-icon>
+                    </a>
+                </div>
+                <a href="#publications" class="px-6 py-2.5 text-sm font-medium text-zinc-400 hover:text-zinc-100 transition-colors w-full sm:w-auto text-center">
+                    View Publications
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="border-y border-white/5 bg-zinc-900/20">
+        <div class="max-w-7xl mx-auto px-6 py-12">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-white/5">
+                <div class="flex flex-col items-center text-center">
+                    <span class="text-3xl md:text-4xl font-semibold tracking-tight text-zinc-100 mb-1">40+</span>
+                    <span class="text-xs font-medium text-zinc-500 uppercase tracking-widest">Publications</span>
+                </div>
+                <div class="flex flex-col items-center text-center">
+                    <span class="text-3xl md:text-4xl font-semibold tracking-tight text-zinc-100 mb-1">1.2k</span>
+                    <span class="text-xs font-medium text-zinc-500 uppercase tracking-widest">Citations</span>
+                </div>
+                <div class="flex flex-col items-center text-center">
+                    <span class="text-3xl md:text-4xl font-semibold tracking-tight text-zinc-100 mb-1">5</span>
+                    <span class="text-xs font-medium text-zinc-500 uppercase tracking-widest">Active Grants</span>
+                </div>
+                <div class="flex flex-col items-center text-center">
+                    <span class="text-3xl md:text-4xl font-semibold tracking-tight text-zinc-100 mb-1">12</span>
+                    <span class="text-xs font-medium text-zinc-500 uppercase tracking-widest">Researchers</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Areas Section -->
+    <section id="research" class="py-24 md:py-32 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="mb-16 md:mb-24">
+                <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-zinc-100 mb-4 mask-reveal">Research Domains</h2>
+                <p class="text-sm md:text-base text-zinc-400 max-w-xl mask-reveal">We apply rigorous theoretical models and advanced computational techniques to solve pressing real-world engineering problems.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Card 1: Border Gradient -->
+                <div class="relative p-[1px] rounded-2xl bg-gradient-to-b from-white/10 to-transparent group">
+                    <div class="relative h-full w-full bg-zinc-950 rounded-[15px] overflow-hidden flex flex-col">
+                        <div class="h-48 w-full relative overflow-hidden bg-zinc-900 border-b border-white/5">
+                            <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/4734259a-bad7-422f-981e-ce01e79184f2_1600w.jpg" alt="Energy Grids" class="w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700 ease-out" />
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <div class="w-10 h-10 rounded-lg bg-zinc-900 border border-white/5 flex items-center justify-center mb-4 text-zinc-300">
+                                <iconify-icon icon="solar:bolt-circle-linear" style="font-size: 1.5rem; stroke-width: 1.5;"></iconify-icon>
+                            </div>
+                            <h3 class="text-lg font-medium tracking-tight text-zinc-100 mb-2">Smart Energy Systems</h3>
+                            <p class="text-sm text-zinc-400 leading-relaxed mb-6 flex-grow">Optimization of microgrids, integration of renewable energy sources, and predictive maintenance utilizing machine learning models.</p>
+                            <a href="#" class="text-sm font-medium text-zinc-300 hover:text-white flex items-center gap-1 transition-colors w-fit">
+                                Learn more <iconify-icon icon="solar:arrow-right-linear"></iconify-icon>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Border Gradient -->
+                <div class="relative p-[1px] rounded-2xl bg-gradient-to-b from-white/10 to-transparent group">
+                    <div class="relative h-full w-full bg-zinc-950 rounded-[15px] overflow-hidden flex flex-col">
+                        <div class="h-48 w-full relative overflow-hidden bg-zinc-900 border-b border-white/5">
+                            <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/724142aa-44a6-48d3-9cf3-761e00d05b78_1600w.jpg" alt="Robotics" class="w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700 ease-out" />
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <div class="w-10 h-10 rounded-lg bg-zinc-900 border border-white/5 flex items-center justify-center mb-4 text-zinc-300">
+                                <iconify-icon icon="solar:settings-minimalistic-linear" style="font-size: 1.5rem; stroke-width: 1.5;"></iconify-icon>
+                            </div>
+                            <h3 class="text-lg font-medium tracking-tight text-zinc-100 mb-2">Autonomous Robotics</h3>
+                            <p class="text-sm text-zinc-400 leading-relaxed mb-6 flex-grow">Developing robust control algorithms for unmanned aerial vehicles (UAVs) and robotic manipulators in constrained environments.</p>
+                            <a href="#" class="text-sm font-medium text-zinc-300 hover:text-white flex items-center gap-1 transition-colors w-fit">
+                                Learn more <iconify-icon icon="solar:arrow-right-linear"></iconify-icon>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Border Gradient -->
+                <div class="relative p-[1px] rounded-2xl bg-gradient-to-b from-white/10 to-transparent group">
+                    <div class="relative h-full w-full bg-zinc-950 rounded-[15px] overflow-hidden flex flex-col">
+                        <div class="h-48 w-full relative overflow-hidden bg-zinc-900 border-b border-white/5">
+                            <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/e534354d-c5f2-4399-a1d9-2f50338e8c47_1600w.jpg" alt="AI Analytics" class="w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700 ease-out" />
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <div class="w-10 h-10 rounded-lg bg-zinc-900 border border-white/5 flex items-center justify-center mb-4 text-zinc-300">
+                                <iconify-icon icon="solar:graph-up-linear" style="font-size: 1.5rem; stroke-width: 1.5;"></iconify-icon>
+                            </div>
+                            <h3 class="text-lg font-medium tracking-tight text-zinc-100 mb-2">AI-Driven Infrastructure</h3>
+                            <p class="text-sm text-zinc-400 leading-relaxed mb-6 flex-grow">Utilizing deep learning and reinforcement learning to enhance the resilience and efficiency of critical cyber-physical systems.</p>
+                            <a href="#" class="text-sm font-medium text-zinc-300 hover:text-white flex items-center gap-1 transition-colors w-fit">
+                                Learn more <iconify-icon icon="solar:arrow-right-linear"></iconify-icon>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recent Publications List (Minimal UI Style) -->
+    <section id="publications" class="py-24 border-t border-white/5 bg-zinc-950">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-100 mb-12 mask-reveal">Selected Publications</h2>
+            
+            <div class="flex flex-col gap-4">
+                <!-- Publication Item -->
+                <div class="group relative flex flex-col sm:flex-row gap-4 sm:gap-6 p-5 rounded-xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.04] transition-colors">
+                    <div class="flex-shrink-0 pt-1 text-zinc-500 group-hover:text-zinc-300 transition-colors">
+                        <iconify-icon icon="solar:document-text-linear" style="font-size: 1.5rem; stroke-width: 1.5;"></iconify-icon>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-medium text-zinc-100 mb-1 leading-snug">Deep Reinforcement Learning for Dynamic Energy Management in Grid-Connected Microgrids</h4>
+                        <p class="text-xs text-zinc-400 mb-2">IEEE Transactions on Smart Grid · 2023</p>
+                        <p class="text-xs text-zinc-500">Hasan Masrur, A. Al-Awami, M. Abido</p>
+                    </div>
+                </div>
+
+                <!-- Publication Item -->
+                <div class="group relative flex flex-col sm:flex-row gap-4 sm:gap-6 p-5 rounded-xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.04] transition-colors">
+                    <div class="flex-shrink-0 pt-1 text-zinc-500 group-hover:text-zinc-300 transition-colors">
+                        <iconify-icon icon="solar:document-text-linear" style="font-size: 1.5rem; stroke-width: 1.5;"></iconify-icon>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-medium text-zinc-100 mb-1 leading-snug">Robust Control Strategies for Multi-Agent UAV Systems in Wind Disturbances</h4>
+                        <p class="text-xs text-zinc-400 mb-2">Automatica · 2022</p>
+                        <p class="text-xs text-zinc-500">SERA Research Group</p>
+                    </div>
+                </div>
+
+                <!-- Publication Item -->
+                <div class="group relative flex flex-col sm:flex-row gap-4 sm:gap-6 p-5 rounded-xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.04] transition-colors">
+                    <div class="flex-shrink-0 pt-1 text-zinc-500 group-hover:text-zinc-300 transition-colors">
+                        <iconify-icon icon="solar:document-text-linear" style="font-size: 1.5rem; stroke-width: 1.5;"></iconify-icon>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-medium text-zinc-100 mb-1 leading-snug">Machine Learning Approaches to Predictive Maintenance in Power Transformers</h4>
+                        <p class="text-xs text-zinc-400 mb-2">Applied Energy · 2022</p>
+                        <p class="text-xs text-zinc-500">Hasan Masrur, et al.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-8 text-center sm:text-left">
+                <a href="#" class="inline-flex items-center gap-2 text-sm font-medium text-zinc-400 hover:text-zinc-100 transition-colors">
+                    View full archive on Google Scholar
+                    <iconify-icon icon="solar:arrow-right-up-linear" style="font-size: 1rem;"></iconify-icon>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="py-24 md:py-32 border-t border-white/5 bg-zinc-900/20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="mb-16">
+                <h2 class="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-100 mb-4 mask-reveal">Principal Investigators & Team</h2>
+                <p class="text-sm text-zinc-400 max-w-2xl mask-reveal">A multidisciplinary team of systems engineers, computer scientists, and applied mathematicians.</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-12">
+                <!-- Team Member -->
+                <div class="flex flex-col">
+                    <div class="w-full aspect-[4/5] rounded-xl overflow-hidden mb-4 bg-zinc-800 border border-white/5">
+                        <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/2f563338-39fa-47ea-9761-658d4f3f84db_1600w.jpg" alt="Lab Director" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" />
+                    </div>
+                    <h4 class="text-base font-medium tracking-tight text-zinc-100">Dr. Hasan Masrur</h4>
+                    <p class="text-sm text-zinc-500">Lab Director</p>
+                </div>
+
+                <!-- Team Member -->
+                <div class="flex flex-col">
+                    <div class="w-full aspect-[4/5] rounded-xl overflow-hidden mb-4 bg-zinc-800 border border-white/5">
+                        <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/4f5668c5-fc4a-44e0-bc5e-a664189d3c31_1600w.jpg" alt="Postdoc Researcher" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" />
+                    </div>
+                    <h4 class="text-base font-medium tracking-tight text-zinc-100">Sarah Al-Qahtani</h4>
+                    <p class="text-sm text-zinc-500">Postdoctoral Fellow</p>
+                </div>
+
+                <!-- Team Member -->
+                <div class="flex flex-col">
+                    <div class="w-full aspect-[4/5] rounded-xl overflow-hidden mb-4 bg-zinc-800 border border-white/5">
+                        <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/eca707cc-a5b7-439a-b4fd-247f6106c2e1_1600w.jpg" alt="PhD Candidate" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" />
+                    </div>
+                    <h4 class="text-base font-medium tracking-tight text-zinc-100">Omar Tariq</h4>
+                    <p class="text-sm text-zinc-500">PhD Candidate</p>
+                </div>
+
+                <!-- Team Member -->
+                <div class="flex flex-col">
+                    <div class="w-full aspect-[4/5] rounded-xl overflow-hidden mb-4 bg-zinc-800 border border-white/5">
+                        <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/77415a2e-dcbc-4748-a29d-fced4821881a_1600w.jpg" alt="Research Assistant" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" />
+                    </div>
+                    <h4 class="text-base font-medium tracking-tight text-zinc-100">Lina Youssef</h4>
+                    <p class="text-sm text-zinc-500">MSc Researcher</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/5 py-12">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+            <div>
+                <div class="flex items-center gap-2 text-zinc-100 mb-2">
+                    <iconify-icon icon="solar:cpu-bolt-linear" style="font-size: 1.25rem; stroke-width: 1.5;"></iconify-icon>
+                    <span class="text-sm font-medium tracking-tight">SERA Lab</span>
+                </div>
+                <p class="text-xs text-zinc-500">King Fahd University of Petroleum and Minerals<br>Dhahran, Saudi Arabia</p>
+            </div>
+            <div class="flex gap-6 text-sm text-zinc-400">
+                <a href="#" class="hover:text-zinc-100 transition-colors">Internal Portal</a>
+                <a href="#" class="hover:text-zinc-100 transition-colors">Contact</a>
+                <a href="#" class="hover:text-zinc-100 transition-colors">KFUPM Site</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- GSAP Masked Reveal Script -->
+    <script>
+        document.addEventListener("DOMContentLoaded", (event) => {
+            gsap.registerPlugin(ScrollTrigger);
+
+            const revealElements = document.querySelectorAll('.mask-reveal');
+
+            revealElements.forEach((el) => {
+                // Split text content into words
+                const words = el.innerText.split(' ');
+                el.innerHTML = ''; // Clear original content
+
+                words.forEach((word) => {
+                    // Create an outer wrapper for masking
+                    const wrapper = document.createElement('span');
+                    wrapper.style.cssText = 'overflow: hidden; display: inline-block; vertical-align: top; margin-right: 0.25em;';
+                    
+                    // Create inner element for animation
+                    const inner = document.createElement('span');
+                    inner.innerText = word;
+                    inner.style.cssText = 'display: inline-block; transform: translateY(110%); will-change: transform;';
+                    inner.className = 'reveal-inner';
+
+                    wrapper.appendChild(inner);
+                    el.appendChild(wrapper);
+                });
+
+                // Animate elements when they enter viewport
+                gsap.to(el.querySelectorAll('.reveal-inner'), {
+                    y: "0%",
+                    ease: "power4.out",
+                    duration: 1.2,
+                    stagger: 0.04,
+                    scrollTrigger: {
+                        trigger: el,
+                        start: "top 90%",
+                        toggleActions: "play none none reverse"
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
